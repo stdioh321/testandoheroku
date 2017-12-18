@@ -1,3 +1,5 @@
-FROM alpine:latest
+FROM nginx
 
-CMD gunicorn --bind 0.0.0.0:$PORT wsgi
+EXPOSE 80
+
+CMD /etc/init.d/nginx start && tail -f /dev/null
